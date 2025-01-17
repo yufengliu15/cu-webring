@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>CU Webring</title>
+        <meta name="author" content="Yufeng">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="./style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.5.3"></script>
+    </head>
+    <body onload="fillSiteTable('fromLoading')">
+        <div>
+
+        </div>
+        <div id="content">
+            <div class="sticky" id="searchbardiv">
+                <input id="searchbar" type="search" maxlength="100" spellcheck="false" placeholder="Search by name, year joined, or website" oninput="fillSiteTable(`fromSearch`)">
+            </div>
+            <noscript>
+                <p>This website requires JavaScript to run. Please enable running scripts for this website in your browser.</p>
+            </noscript>
+        </div>
+        <script type="module"  src="./js/cu-webring.js"></script>
+    </body>
+</html>
