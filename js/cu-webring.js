@@ -8,13 +8,25 @@ const options = {
 
 const fuse = new Fuse(sites, options)
 
+function shuffle(array) {
+    const arrayCopy = [...array];
+    let currentIndex = array.length;
+    while (currentIndex != 0) {
+        let randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        [arrayCopy[currentIndex], arrayCopy[randomIndex]] = [
+            arrayCopy[randomIndex], arrayCopy[currentIndex]];
+    }
+    return arrayCopy;
+}
+
 function fillSiteTable(type){
     const searchBar = document.getElementById("searchbar");
     const divSiteList = document.getElementById("searchbardiv");
     let siteArray = [];
 
     if (type == "fromLoading" || type == "fromSearch" && !searchBar.value) {
-        siteArray = sites;
+        siteArray = shuffle(sites);
     } else if (type =="fromSearch" && searchBar.value){
         let results = [];
 
@@ -27,6 +39,7 @@ function fillSiteTable(type){
             siteArray.push(results[i]["item"]);
         }
     }
+
     if (document.getElementById("mainTable")) {
         const oldTable = document.getElementById("mainTable");
         oldTable.remove();
@@ -41,7 +54,9 @@ function fillSiteTable(type){
         }
         htmlContent.push("<li><a target=\"_blank\" href=\"" + cleanSite.toString() + "\">" + host + "</a></li>");
     }
+
     htmlContent.push("</ul>");
+
     divSiteList.insertAdjacentHTML(
         "afterend",
         htmlContent.join('')

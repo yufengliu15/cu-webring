@@ -1,3 +1,52 @@
 body {
-    background-color: #ACADA8;
+    background-color: black;
+    font-family: 'Source Code Pro';
+}
+
+.sticky {
+    position: sticky;
+    position: -webkit-sticky;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+#cu-webring {
+    color: white;
+    top: 0px;
+    left: 0px;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+#mainTable {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 60px;
+    top: 0px;
+    margin-bottom: 20px;
+    width: 70%;
+}
+
+#searchbar {
+    font-family: 'Source Code Pro';
 }
