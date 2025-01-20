@@ -1,6 +1,7 @@
 body {
-    background-color: black;
+    background-color: #1D1616;
     font-family: 'Source Code Pro';
+    font-size: larger;
 }
 
 .sticky {
@@ -10,7 +11,7 @@ body {
 
 a{
     text-decoration: none;
-    color: white;
+    color: #EEEEEE;
 }
 
 ul {
@@ -20,13 +21,34 @@ ul {
     gap: 30px;
 }
 
-#cu-webring {
+#searchbardiv {
+    border-bottom-color: rgb(160,160,160);
+    /* top: 15px; */
+    border-bottom-color: rgb(160, 160, 160);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    width: 65%;
+}
+
+#searchbar {
+    /* float: right; */
+    background-color: rgb(0,0,0,0);
+    caret-color: #EEEEEE;
     color: white;
+    padding: 6px;
+    border: none;
+    outline: none;
+    font-family: 'Source Code Pro';
+}
+
+#cu-webring {
+    color: #EEEEEE;
     top: 0px;
     left: 0px;
 }
 
 #content {
+    margin-top: 40vh;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -45,8 +67,4 @@ ul {
     top: 0px;
     margin-bottom: 20px;
     width: 70%;
-}
-
-#searchbar {
-    font-family: 'Source Code Pro';
 }
