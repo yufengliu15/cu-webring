@@ -1,0 +1,70 @@
+body {
+    background-color: #1D1616;
+    font-family: 'Source Code Pro';
+    font-size: larger;
+}
+
+.sticky {
+    position: sticky;
+    position: -webkit-sticky;
+}
+
+a{
+    text-decoration: none;
+    color: #EEEEEE;
+}
+
+ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+#searchbardiv {
+    border-bottom-color: rgb(160,160,160);
+    /* top: 15px; */
+    border-bottom-color: rgb(160, 160, 160);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    width: 65%;
+}
+
+#searchbar {
+    /* float: right; */
+    background-color: rgb(0,0,0,0);
+    caret-color: #EEEEEE;
+    color: white;
+    padding: 6px;
+    border: none;
+    outline: none;
+    font-family: 'Source Code Pro';
+}
+
+#cu-webring {
+    color: #EEEEEE;
+    top: 0px;
+    left: 0px;
+}
+
+#content {
+    margin-top: 40vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+#mainTable {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 60px;
+    top: 0px;
+    margin-bottom: 20px;
+    width: 70%;
+}
