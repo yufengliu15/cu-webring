@@ -350,7 +350,7 @@ const sites = [
     "website": "https://valleystream.tech"
   },
   {
-    "name": "Raphael Onana",
+    "name": "Raphaël Onana",
     "year": 2022,
     "website": "https://nathonana.com"
   }

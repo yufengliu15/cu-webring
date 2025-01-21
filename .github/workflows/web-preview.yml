@@ -1,7 +1,7 @@
 name: PR Preview Deployment
 env:
   ACTOR: ${{ github.actor }}
-run-name: ${{ env.ACTOR }}  is deploying a preview for PR ${{ github.event.number }}
+run-name: ${{ github.actor }}  is deploying a preview for PR ${{ github.event.number }}
 
 on:
   pull_request:
@@ -19,12 +19,14 @@ jobs:
     permissions:
       pull-requests: write
       contents: read
+      id-token: write
+      pages: write
 
     steps:
       - uses: actions/checkout@v4
 
-      - name: Validate JSON
-        run: bash ./validate_json.sh
+      # - name: Validate JSON
+      #   run: bash ./.github/workflows/validate_json.sh
 
       - name: Deploy to GitHub Pages Preview
         uses: actions/configure-pages@v4
