@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Validate JSON
-        run: bash ./validate_json.sh
+        run: bash ./.github/workflows/validate_json.sh
 
       - name: Deploy to GitHub Pages Preview
         uses: actions/configure-pages@v4
