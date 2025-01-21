@@ -13,14 +13,6 @@ on:
       - '**/*.html'
       - '**/*.css'
       - '**/*.js'
-  push:
-    branches:
-     - main
-    paths:
-      - 'js/user_sites.js'
-      - '**/*.html'
-      - '**/*.css'
-      - '**/*.js'
 
 jobs:
   deploy-preview:
