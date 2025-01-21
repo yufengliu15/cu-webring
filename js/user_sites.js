@@ -348,6 +348,11 @@ const sites = [
     "name": "Valley Stream",
     "year": 2022,
     "website": "https://valleystream.tech"
+  },
+  {
+    "name": "Raphael Onana",
+    "year": 2022,
+    "website": "https://nathonana.com"
   }
 ];
 
