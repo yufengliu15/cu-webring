@@ -1,7 +1,7 @@
 name: PR Preview Deployment
 env:
   ACTOR: ${{ github.actor }}
-  PREVIEW_URL: https://cu-webring/preview/${{ github.actor }}/pr-${{ github.event.number }}/
+  PREVIEW_URL: https://github.com/${{ github.repository_owner }}/${{ github.repository }}/preview/${{ github.actor }}/pr-${{ github.event.number }}/
 run-name: ${{ github.actor }}  is deploying a preview for PR ${{ github.event.number }}
 
 on:
