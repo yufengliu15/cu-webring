@@ -23,15 +23,27 @@ ul {
 
 #searchbardiv {
     border-bottom-color: rgb(160,160,160);
-    /* top: 15px; */
-    border-bottom-color: rgb(160, 160, 160);
     border-bottom-style: solid;
     border-bottom-width: 1px;
     width: 65%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: none;
+    position: relative;
+}
+
+#searchbardiv::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 200px);  
+    height: 1px;
+    background-color: rgb(160,160,160);
 }
 
 #searchbar {
-    /* float: right; */
     background-color: rgb(0,0,0,0);
     caret-color: #EEEEEE;
     color: white;
@@ -39,6 +51,22 @@ ul {
     border: none;
     outline: none;
     font-family: 'Source Code Pro';
+    flex: 1;
+}
+
+#imfeelinglucky {
+    margin-left: auto;
+    padding: 6px 12px;
+    background-color: transparent;
+    color: #EEEEEE;
+    border: 1px solid #EEEEEE;
+    border-radius: 4px;
+    font-family: 'Source Code Pro';
+    cursor: pointer;
+}
+
+#imfeelinglucky:hover {
+    background-color: rgba(216, 64, 64, 0.2);
 }
 
 #cu-webring {
