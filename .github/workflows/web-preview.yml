@@ -1,7 +1,7 @@
 name: PR Preview Deployment
 env:
   ACTOR: ${{ github.actor }}
-run-name: ${{ env.ACTOR }}  is deploying a preview for PR ${{ github.event.number }}
+run-name: ${{ github.actor }}  is deploying a preview for PR ${{ github.event.number }}
 
 on:
   pull_request:
