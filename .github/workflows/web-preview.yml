@@ -5,8 +5,8 @@ env:
 run-name: ${{ github.actor }}  is deploying a preview for PR ${{ github.event.number }}
 
 on:
-  pull_request:
-    types: [opened, synchronize, reopened]
+  push:
+    # types: [opened, synchronize, reopened]
     # triggers a workflow if a pr changes any of these files
     paths:
       - 'js/user_sites.js'
