@@ -77,14 +77,20 @@ ul {
     }
 }
 
+#searchbardiv img {
+    padding-top: 5px;
+}
+
 #searchbar {
     background-color: rgb(0,0,0,0);
     color: var(--primary-text);
     padding: 6px;
+    padding-left: 0px;
     border: none;
     outline: none;
     font-family: 'Source Code Pro';
     flex: 1;
+    font-size: large;
 }
 
 #surpriseme {
