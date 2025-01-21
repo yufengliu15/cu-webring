@@ -18,7 +18,7 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     environment:
-      name: github-pages
+      name: preview
       url: ${{ env.PREVIEW_URL }}
     permissions:
       pull-requests: write
