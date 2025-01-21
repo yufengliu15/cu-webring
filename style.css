@@ -1,5 +1,10 @@
+:root {
+    --primary-text: #dadada;
+    --secondary-color: #e91b25;
+}
+
 body {
-    background-color: #1D1616;
+    background-color: #161616;
     font-family: 'Source Code Pro';
     font-size: larger;
 }
@@ -11,7 +16,12 @@ body {
 
 a{
     text-decoration: none;
-    color: #EEEEEE;
+    color: var(--primary-text);
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover{
+    color: var(--secondary-color);
 }
 
 ul {
@@ -22,7 +32,7 @@ ul {
 }
 
 #searchbardiv {
-    border-bottom-color: rgb(160,160,160);
+    border-bottom-color: var(--primary-text);
     border-bottom-style: solid;
     border-bottom-width: 1px;
     width: 65%;
@@ -38,15 +48,38 @@ ul {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: calc(100% - 200px);  
+    width: calc(100% - var(--button-width, auto));  
     height: 1px;
-    background-color: rgb(160,160,160);
+    background-color: var(--primary-text);
+}
+
+@media screen and (max-width: 460px) {
+    #searchbardiv::after {
+        width: calc(100% - 80px);  
+    }
+}
+
+@media screen and (max-width: 430px) {
+    #searchbardiv::after {
+        width: calc(100% - 60px);  
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #searchbardiv::after {
+        width: calc(100% - 40px);  
+    }
+}
+
+@media screen and (max-width: 370px) {
+    #searchbardiv::after {
+        width: calc(100% - 20px);  
+    }
 }
 
 #searchbar {
     background-color: rgb(0,0,0,0);
-    caret-color: #EEEEEE;
-    color: white;
+    color: var(--primary-text);
     padding: 6px;
     border: none;
     outline: none;
@@ -54,29 +87,24 @@ ul {
     flex: 1;
 }
 
-#imfeelinglucky {
+#surpriseme {
     margin-left: auto;
     padding: 6px 12px;
     background-color: transparent;
-    color: #EEEEEE;
-    border: 1px solid #EEEEEE;
+    color: var(--primary-text);
+    border: 1px solid var(--primary-text);
     border-radius: 4px;
     font-family: 'Source Code Pro';
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
 }
 
-#imfeelinglucky:hover {
-    background-color: rgba(216, 64, 64, 0.2);
-}
-
-#cu-webring {
-    color: #EEEEEE;
-    top: 0px;
-    left: 0px;
+#surpriseme:hover {
+    background-color: rgba(233,27,37, 0.2);
 }
 
 #content {
-    margin-top: 40vh;
+    margin-top: 20vh;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;

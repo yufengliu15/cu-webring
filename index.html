@@ -6,7 +6,7 @@
         <title>CU Webring</title>
         <meta name="author" content="Yufeng">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <meta property="og:title" content="CU Webring">
         <link rel="stylesheet" href="./style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,19 +14,17 @@
         <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.5.3"></script>
     </head>
     <body onload="fillSiteTable('fromLoading')">
-        <div id="cu-webring">
-            <p>Carleton University Webring</p>
-        </div>
         <div id="content">
+            <img src="./assets/carleton_logo.svg" width="600">
             <div class="sticky" id="searchbardiv">
                 <img src="./assets/search.svg">
                 <input id="searchbar" type="search" maxlength="100" spellcheck="false" placeholder="Search by name, year joined, or website" oninput="fillSiteTable(`fromSearch`)">
-                <button id="imfeelinglucky" type="button" onclick="handleLuckyButton()">I'm Feeling Lucky</button>
+                <button id="surpriseme" type="button" onclick="handleRandomSite()">Surprise Me!</button>
             </div>
             <noscript>
                 <p>This website requires JavaScript to run. Please enable running scripts for this website in your browser.</p>
             </noscript>
         </div>
-        <script type="module"  src="./js/cu-webring.js"></script>
+        <script type="module" src="./js/cu-webring.js"></script>
     </body>
 </html>

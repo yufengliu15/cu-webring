@@ -8,13 +8,21 @@ const options = {
 
 const fuse = new Fuse(sites, options)
 
-function handleLuckyButton(){
+function handleRandomSite(){
     const randomIndex = Math.floor(Math.random() * sites.length);
 
     const randomSite = sites[randomIndex];
     
     window.open(randomSite.website, '_blank');
 }
+
+function updateButtonWidth() {
+    const button = document.getElementById('surpriseme');
+    const buttonWidth = button.offsetWidth;
+    document.documentElement.style.setProperty('--button-width', `${buttonWidth + 20}px`); // Added 20px for padding/gap
+}
+window.addEventListener('load', updateButtonWidth);
+window.addEventListener('resize', updateButtonWidth);
 
 function fillSiteTable(type){
     const searchBar = document.getElementById("searchbar");
@@ -59,5 +67,5 @@ function fillSiteTable(type){
     );
 }
 
-window.handleLuckyButton = handleLuckyButton;
+window.handleRandomSite = handleRandomSite;
 window.fillSiteTable = fillSiteTable;
