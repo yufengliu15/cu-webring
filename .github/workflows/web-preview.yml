@@ -1,6 +1,7 @@
 name: PR Preview Deployment
 env:
   ACTOR: ${{ github.actor }}
+  BASE_URL: cu-webring.org
   PREVIEW_PATH: preview/${{ github.actor }}/pr-${{ github.event.number }}
 run-name: ${{ github.actor }}  is deploying a preview for PR ${{ github.event.number }}
 
@@ -18,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: https://your-site.com/preview/${{ github.actor }}/pr-${{ github.event.number }}/
+      url: ${{ env.BASE_URL }}/preview/${{ github.actor }}/pr-${{ github.event.number }}/
     permissions:
       pull-requests: write
       contents: read
