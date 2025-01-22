@@ -58,11 +58,14 @@ jobs:
         with:
           script: |
             const previewUrl = '${{ steps.deployment.outputs.page_url }}';
-            # console.log("check Context:\n", JSON.stringify(${{steps.deployment.outputs}}, null, 2), "\n");
-
-            const comment = `⚡ Congrats! Your Preview deployment is ready!\n\nYou can view the preview of the webring with 
-            your changes at: ${ previewUrl }\n\nThis preview will be automatically updated as you make 
-            changes to your PR.`;
+            const comment = `
+              ⚡ Congrats! Your Preview deployment is ready!
+      
+              You can view the preview of the webring with your changes at:
+              ${previewUrl}
+      
+              This preview will be automatically updated as you make changes to your PR.
+            `.trim();
             
             github.rest.issues.createComment({
               issue_number: context.issue.number,
