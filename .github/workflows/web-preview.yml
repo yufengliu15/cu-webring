@@ -18,7 +18,7 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     environment:
-      name: github-pages
+      name: preview
       url: ${{ env.BASE_URL }}/preview/${{ github.actor }}/pr-${{ github.event.number }}/
     permissions:
       pull-requests: write
@@ -52,18 +52,20 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           preview: true
-          preview_branch: ${{ env.PREVIEW_PATH }} # appends to the base url in environment
 
       - name: Comment PR
         uses: actions/github-script@v7
         with:
           script: |
-            const previewUrl = '${{ steps.deployment.outputs.page_url }}';
+            const stepUrl = '${{ steps.deployment.outputs.page_url }}';
+            const previewUrl = '${{ env.BASE_URL }}/preview/${{ github.actor }}/pr-${{ github.event.number }}/';
+            
             const comment = `
               ⚡ Congrats! Your Preview deployment is ready!
       
               You can view the preview of the webring with your changes at:
               ${previewUrl}
+              or ${stepUrl}
       
               This preview will be automatically updated as you make changes to your PR.
             `.trim();
