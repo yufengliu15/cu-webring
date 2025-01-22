@@ -47,14 +47,19 @@ jobs:
         with:
           preview: true
           preview_branch: ${{ env.PREVIEW_PATH }} # appends to the base url in environment
+      - name: Override page_url
+        id: change-page-url
+        run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}/${{ env.PREVIEW_PATH }}" >> $GITHUB_OUTPUT
 
       - name: Comment PR
         uses: actions/github-script@v7
         with:
           script: |
-            console.log("check Context:\n", JSON.stringify(github, null, 2), "\n");
+            const previewUrl = '${{ steps.deployment.outputs.page_url }}/${{ env.PREVIEW_PATH }}';
+            console.log("check Context:\n", JSON.stringify(steps.deployment.outputs, null, 2), "\n");
+
             const comment = `⚡ Congrats! Your Preview deployment is ready!\n\nYou can view the preview of the webring with 
-            your changes at: ${{ env.PREVIEW_PATH }}\n\nThis preview will be automatically updated as you make 
+            your changes at: ${ previewUrl }\n\nThis preview will be automatically updated as you make 
             changes to your PR.`;
             
             github.rest.issues.createComment({
