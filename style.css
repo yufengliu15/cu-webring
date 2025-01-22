@@ -24,11 +24,36 @@ a:hover{
     color: var(--secondary-color);
 }
 
+a#add-website {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    padding: 6px 12px !important;
+    background-color: black !important;
+    color: var(--primary-text) !important;
+    border: 1px solid var(--primary-text) !important;
+    border-radius: 40px !important;
+    font-family: 'Source Code Pro' !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease-in-out !important;
+    z-index: 1000 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    white-space: nowrap !important;
+}
+
+a#add-website:hover {
+    background-color: rgba(233,27,37);
+}
+
 ul {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    padding: 0 20px;
+    max-width: 100%;
 }
 
 #searchbardiv {
@@ -38,9 +63,11 @@ ul {
     width: 65%;
     display: flex;
     align-items: center;
+    flex-wrap: wrap; 
     gap: 10px;
     border-bottom: none;
     position: relative;
+    padding: 0 20px;
 }
 
 #searchbardiv::after {
@@ -48,37 +75,14 @@ ul {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: calc(100% - var(--button-width, auto));  
+    width: calc(100% - 160px);  
     height: 1px;
     background-color: var(--primary-text);
 }
 
-@media screen and (max-width: 460px) {
-    #searchbardiv::after {
-        width: calc(100% - 80px);  
-    }
-}
-
-@media screen and (max-width: 430px) {
-    #searchbardiv::after {
-        width: calc(100% - 60px);  
-    }
-}
-
-@media screen and (max-width: 400px) {
-    #searchbardiv::after {
-        width: calc(100% - 40px);  
-    }
-}
-
-@media screen and (max-width: 370px) {
-    #searchbardiv::after {
-        width: calc(100% - 20px);  
-    }
-}
-
 #searchbardiv img {
     padding-top: 5px;
+    margin-left: -20px; 
 }
 
 #searchbar {
@@ -91,6 +95,7 @@ ul {
     font-family: 'Source Code Pro';
     flex: 1;
     font-size: large;
+    width: 100%;
 }
 
 #surpriseme {
@@ -106,7 +111,31 @@ ul {
 }
 
 #surpriseme:hover {
-    background-color: rgba(233,27,37, 0.2);
+    background-color: rgba(233,27,37);
+}
+
+/* Move surprise me button down */
+@media screen and (max-width: 805px) {
+    #surpriseme {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: calc(100% + 15px);
+        margin-bottom: 100%;
+    }
+    
+    #searchbardiv {
+        margin-bottom: 60px;
+    }
+
+    #searchbardiv::after {
+        width: calc(100%);  
+    }
+}
+@media screen and (max-width: 768px) {
+    #add-website {
+        font-size: medium;
+    }
 }
 
 #content {
@@ -117,6 +146,13 @@ ul {
     align-items: center;
     justify-content: center;
     padding-bottom: 50px;
+}
+
+#content img {
+    max-width: 90%;
+    height: auto;
+    width: auto;
+    max-width: 600px;
 }
 
 #mainTable {
