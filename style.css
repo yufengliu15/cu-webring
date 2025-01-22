@@ -115,7 +115,7 @@ ul {
     }
 }
 
-#add-website {
+a#add-website {
     position: fixed;
     bottom: 20px;
     left: 50%;
@@ -134,7 +134,7 @@ ul {
     white-space: nowrap;
 }
 
-#add-website:hover {
+a#add-website:hover {
     background-color: rgba(233,27,37);
 }
 
