@@ -14,29 +14,6 @@ body {
     position: -webkit-sticky;
 }
 
-a#add-website {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 6px 12px;
-    background-color: black;
-    color: var(--primary-text);
-    border: 1px solid var(--primary-text);
-    border-radius: 40px;
-    font-family: 'Source Code Pro';
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    z-index: 1000;
-    text-decoration: none;
-    display: inline-block;
-    white-space: nowrap;
-}
-
-a#add-website:hover {
-    background-color: rgba(233,27,37);
-}
-
 a{
     text-decoration: none;
     color: var(--primary-text);
@@ -45,6 +22,29 @@ a{
 
 a:hover{
     color: var(--secondary-color);
+}
+
+a#add-website {
+    position: fixed !important;
+    bottom: 20px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    padding: 6px 12px !important;
+    background-color: black !important;
+    color: var(--primary-text) !important;
+    border: 1px solid var(--primary-text) !important;
+    border-radius: 40px !important;
+    font-family: 'Source Code Pro' !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease-in-out !important;
+    z-index: 1000 !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    white-space: nowrap !important;
+}
+
+a#add-website:hover {
+    background-color: rgba(233,27,37);
 }
 
 ul {
