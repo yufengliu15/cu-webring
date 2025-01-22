@@ -1,6 +1,7 @@
 name: PR Preview Deployment
 env:
   ACTOR: ${{ github.actor }}
+  PREVIEW_PATH: preview/${{ github.actor }}/pr-${{ github.event.number }}
 run-name: ${{ github.actor }}  is deploying a preview for PR ${{ github.event.number }}
 
 on:
@@ -8,7 +9,6 @@ on:
     types: [opened, synchronize, edited, reopened]
     # triggers a workflow if a pr modifies any of these files
     paths:
-      - 'js/user_sites.js'
       - '**/*.html'
       - '**/*.css'
       - '**/*.js'
@@ -46,7 +46,7 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           preview: true
-          preview_branch: preview/${{ env.ACTOR }}/pr-${{ github.event.number }} # appends to the base url in environment
+          preview_branch: ${{ env.PREVIEW_PATH }} # appends to the base url in environment
 
       - name: Comment PR
         uses: actions/github-script@v7
@@ -54,7 +54,7 @@ jobs:
           script: |
             console.log("check Context:\n", JSON.stringify(github, null, 2), "\n");
             const comment = `⚡ Congrats! Your Preview deployment is ready!\n\nYou can view the preview of the webring with 
-            your changes at: ${{ steps.deployment.outputs.page_url }}\n\nThis preview will be automatically updated as you make 
+            your changes at: ${{ env.PREVIEW_PATH }}\n\nThis preview will be automatically updated as you make 
             changes to your PR.`;
             
             github.rest.issues.createComment({
