@@ -14,6 +14,29 @@ body {
     position: -webkit-sticky;
 }
 
+a#add-website {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 12px;
+    background-color: black;
+    color: var(--primary-text);
+    border: 1px solid var(--primary-text);
+    border-radius: 40px;
+    font-family: 'Source Code Pro';
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    z-index: 1000;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+a#add-website:hover {
+    background-color: rgba(233,27,37);
+}
+
 a{
     text-decoration: none;
     color: var(--primary-text);
@@ -113,29 +136,6 @@ ul {
     #add-website {
         font-size: medium;
     }
-}
-
-a#add-website {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 6px 12px;
-    background-color: black;
-    color: var(--primary-text);
-    border: 1px solid var(--primary-text);
-    border-radius: 40px;
-    font-family: 'Source Code Pro';
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-    z-index: 1000;
-    text-decoration: none;
-    display: inline-block;
-    white-space: nowrap;
-}
-
-a#add-website:hover {
-    background-color: rgba(233,27,37);
 }
 
 #content {
