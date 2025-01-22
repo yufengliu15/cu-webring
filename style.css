@@ -29,6 +29,8 @@ ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    padding: 0 20px;
+    max-width: 100%;
 }
 
 #searchbardiv {
@@ -38,9 +40,11 @@ ul {
     width: 65%;
     display: flex;
     align-items: center;
+    flex-wrap: wrap; 
     gap: 10px;
     border-bottom: none;
     position: relative;
+    padding: 0 20px;
 }
 
 #searchbardiv::after {
@@ -48,37 +52,14 @@ ul {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: calc(100% - var(--button-width, auto));  
+    width: calc(100% - 160px);  
     height: 1px;
     background-color: var(--primary-text);
 }
 
-@media screen and (max-width: 460px) {
-    #searchbardiv::after {
-        width: calc(100% - 80px);  
-    }
-}
-
-@media screen and (max-width: 430px) {
-    #searchbardiv::after {
-        width: calc(100% - 60px);  
-    }
-}
-
-@media screen and (max-width: 400px) {
-    #searchbardiv::after {
-        width: calc(100% - 40px);  
-    }
-}
-
-@media screen and (max-width: 370px) {
-    #searchbardiv::after {
-        width: calc(100% - 20px);  
-    }
-}
-
 #searchbardiv img {
     padding-top: 5px;
+    margin-left: -20px; 
 }
 
 #searchbar {
@@ -91,6 +72,7 @@ ul {
     font-family: 'Source Code Pro';
     flex: 1;
     font-size: large;
+    width: 100%;
 }
 
 #surpriseme {
@@ -106,7 +88,54 @@ ul {
 }
 
 #surpriseme:hover {
-    background-color: rgba(233,27,37, 0.2);
+    background-color: rgba(233,27,37);
+}
+
+/* Move surprise me button down */
+@media screen and (max-width: 805px) {
+    #surpriseme {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: calc(100% + 15px);
+        margin-bottom: 100%;
+    }
+    
+    #searchbardiv {
+        margin-bottom: 60px;
+    }
+
+    #searchbardiv::after {
+        width: calc(100%);  
+    }
+}
+@media screen and (max-width: 768px) {
+    #add-website {
+        font-size: medium;
+    }
+}
+
+#add-website {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 12px;
+    background-color: black;
+    color: var(--primary-text);
+    border: 1px solid var(--primary-text);
+    border-radius: 40px;
+    font-family: 'Source Code Pro';
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    z-index: 1000;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+#add-website:hover {
+    background-color: rgba(233,27,37);
 }
 
 #content {
@@ -117,6 +146,13 @@ ul {
     align-items: center;
     justify-content: center;
     padding-bottom: 50px;
+}
+
+#content img {
+    max-width: 90%;
+    height: auto;
+    width: auto;
+    max-width: 600px;
 }
 
 #mainTable {

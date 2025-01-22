@@ -18,13 +18,14 @@
             <img src="./assets/carleton_logo.svg" width="600">
             <div class="sticky" id="searchbardiv">
                 <img src="./assets/search.svg" width="20">
-                <input id="searchbar" type="search" maxlength="100" spellcheck="false" placeholder="Search by name, year joined, or website" oninput="fillSiteTable(`fromSearch`)">
+                <input id="searchbar" type="search" maxlength="100" spellcheck="false" placeholder="Search by name/site/year admitted" oninput="fillSiteTable(`fromSearch`)">
                 <button id="surpriseme" type="button" onclick="handleRandomSite()">Surprise Me!</button>
             </div>
             <noscript>
                 <p>This website requires JavaScript to run. Please enable running scripts for this website in your browser.</p>
             </noscript>
         </div>
+        <a href="https://github.com/yufengliu15/cu-webring/pulls" id="add-website" target="_blank">Add your website here ></a>
         <script type="module" src="./js/cu-webring.js"></script>
     </body>
 </html>
