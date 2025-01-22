@@ -36,7 +36,7 @@ jobs:
       - name: Prepare Files for Deployment
         run: |
           mkdir -p ${{ env.PREVIEW_PATH }}
-          cp -r * ${{ env.PREVIEW_PATH }}
+          rsync -av --exclude='preview' ./ preview/${{ github.actor }}/pr-${{ github.event.number }}
 
       - name: Deploy to GitHub Pages Preview
         uses: actions/configure-pages@v4
