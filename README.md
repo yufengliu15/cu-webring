@@ -1,5 +1,5 @@
 # cu-webring
-A webring for students with personal websites at Carleton University.
+A webring for Carleton Students by Carleton Students.
 
 Heavily inspired by https://github.com/simcard0000/se-webring and https://github.com/leofalvo/mcgillcswebring.org. 
 
@@ -10,7 +10,7 @@ A [webring](https://en.wikipedia.org/wiki/Webring) is a group of websites linked
 The idea behind this webring is to bring exposure and traffic to your personal website, with the hopes of creating a more community-like experience during your time at Carleton. 
 
 ## How do I join?
-To add your site, you MUST be a [Carleton University Student](https://carleton.ca/) (alumni welcome too!) to join. 
+To add your site, you MUST be a current student or alumni at [Carleton University Student](https://carleton.ca/).
 
 1. Fork the repo
 2. Add your details in `user_sites.js` to the end of `sites`. The 4 values are: 
@@ -24,6 +24,6 @@ To add your site, you MUST be a [Carleton University Student](https://carleton.c
 4. Create a [pull request](https://github.com/yufengliu15/cu-webring/pulls). 
 
 ## How long will the webring be maintained for?
-As long as the url is working ([cu-webring.org](https://cu-webring.org)), I (@yufengliu15) will maintain the webring. So do not hesitate to open a pull request!
+As long as the url is working ([cu-webring.org](https://cu-webring.org)), I (@yufengliu15 & @rapha-pro) will maintain the webring. So do not hesitate to open a pull request!
 
 Authors: Yufeng Liu (@yufengliu15) and Raphaël Onana (@rapha-pro)
