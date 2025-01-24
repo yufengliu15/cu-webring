@@ -5,7 +5,7 @@ Heavily inspired by https://github.com/simcard0000/se-webring and https://github
 
 [What's a webring?](#whats-a-webring) / [How do I join?](#how-do-i-join) / [How long will the webring be maintained for?](#how-long-will-the-webring-be-maintained-for)
 ## What's a webring?
-A [webring](https://en.wikipedia.org/wiki/Webring) is a group of websites linked together in a circular structure, usuall organized around a specific theme, and often educational or social. In our case, the webring is not circular, and much closer to a [hub and spoke](https://en.wikipedia.org/wiki/Spoke%E2%80%93hub_distribution_paradigm). This is because asking everyone to update their website when someone adds/removes theirs would be near impossible, and would discourage the use of the webring. 
+A [webring](https://en.wikipedia.org/wiki/Webring) is a group of websites linked together in a circular structure, usually organized around a specific theme, and often educational or social. In our case, the webring is not circular, and much closer to a [hub and spoke](https://en.wikipedia.org/wiki/Spoke%E2%80%93hub_distribution_paradigm). This is because asking everyone to update their website when someone adds/removes theirs would be near impossible, and would discourage the use of the webring. 
 
 The idea behind this webring is to bring exposure and traffic to your personal website, with the hopes of creating a more community-like experience during your time at Carleton. 
 
