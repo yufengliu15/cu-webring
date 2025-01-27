@@ -14,12 +14,24 @@
         <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.5.3"></script>
     </head>
     <body onload="fillSiteTable('fromLoading')">
-        <div id="content">
+        <!-- Main Content -->
+        <div id="content" class="hidden">
             <img src="./assets/carleton_logo.svg" width="600">
             <div class="sticky" id="searchbardiv">
-                <img src="./assets/search.svg" width="20">
+                <img class="search-icon" src="./assets/search.svg">
                 <input id="searchbar" type="search" maxlength="100" spellcheck="false" placeholder="Search by name/site/year admitted" oninput="fillSiteTable(`fromSearch`)">
-                <button id="surpriseme" type="button" onclick="handleRandomSite()">Surprise Me!</button>
+                <button id="surpriseme" type="button" onclick="handleRandomSite()">
+                    <strong>Surprise Me!</strong>
+                    <div id="container-stars">
+                      <div id="stars"></div>
+                    </div>
+                  
+                    <div id="glow">
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                    </div>
+                </button>
+                  
             </div>
             <noscript>
                 <p>This website requires JavaScript to run. Please enable running scripts for this website in your browser.</p>
@@ -27,5 +39,6 @@
         </div>
         <a href="https://github.com/yufengliu15/cu-webring/pulls" id="add-website" target="_blank">Add your website here ></a>
         <script type="module" src="./js/cu-webring.js"></script>
+        <script src="./js/preloader.js"></script>
     </body>
 </html>
