@@ -430,7 +430,7 @@ const sites = [
   {
     "name": "Raphaël Onana",
     "year": 2022,
-    "website": "https://nathworana.com",
+    "website": "https://nathonana.com",
     "major": "Computer Science"
   }
 ];
