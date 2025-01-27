@@ -16,6 +16,8 @@ env:
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     permissions:
       pull-requests: write
       contents: write
