@@ -3,12 +3,12 @@ env:
   ACTOR: ${{ github.actor }}
   BASE_URL: cu-webring.org
   PREVIEW_PATH: preview/${{ github.actor }}/pr-${{ github.event.number }}
-run-name: ${{ github.actor }}  is deploying a preview for PR ${{ github.event.number }}
+run-name: ${{ github.actor }} is deploying a preview for PR ${{ github.event.number }}
 
 on:
   pull_request:
     types: [opened, synchronize, edited, reopened]
-    # triggers a workflow if a pr modifies any of these files
+    # triggers a workflow if a PR modifies any of these files
     paths:
       - '**/*.html'
       - '**/*.css'
@@ -17,58 +17,44 @@ on:
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
-    environment:
-      name: preview
-      url: ${{ env.BASE_URL }}/preview/${{ github.actor }}/pr-${{ github.event.number }}/
     permissions:
       pull-requests: write
-      contents: read
+      contents: write
+      pages: write
       # needed for deployment
       id-token: write
-      pages: write
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      # Skipping due to the nature of json_file (Has the export-keyword)
-      # - name: Validate JSON
-      #   run: bash ./.github/workflows/validate_json.sh
-
+      # Prepare files for deployment
       - name: Prepare Files for Deployment
         run: |
           mkdir -p ${{ env.PREVIEW_PATH }}
-          rsync -av --exclude='preview' ./ preview/${{ github.actor }}/pr-${{ github.event.number }}
+          rsync -av --exclude='preview' ./ ${{ env.PREVIEW_PATH }}
 
-      - name: Deploy to GitHub Pages Preview
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: ${{ env.PREVIEW_PATH }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./  # Deploy the root directory
+          destination_dir: ${{ env.PREVIEW_PATH }}  # Unique preview path
+          keep_files: true  # Keep existing files in the gh-pages branch
 
-      - name: Deploy to Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          preview: true
-      - name: Override page_url
-        id: change-page-url
-        run: echo "new_page_url=${{ steps.deployment.outputs.page_url }}${{ env.PREVIEW_PATH }}" >> $GITHUB_OUTPUT
-
+      # Comment on the PR with the preview link
       - name: Comment PR
         uses: actions/github-script@v7
         with:
           script: |
-            const stepUrl = '${{ steps.deployment.outputs.page_url }}';
-            const previewUrl = '${{ env.BASE_URL }}/preview/${{ github.actor }}/pr-${{ github.event.number }}/';
+            const previewUrl = 'https://${{ env.BASE_URL }}/${{ env.PREVIEW_PATH }}/';
             
             const comment = `
               ⚡ Congrats! Your Preview deployment is ready!
       
               You can view the preview of the webring with your changes at:
               ${previewUrl}
-              or ${stepUrl}
       
               This preview will be automatically updated as you make changes to your PR.
             `.trim();
