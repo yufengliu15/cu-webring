@@ -21,12 +21,15 @@ jobs:
       pull-requests: write
       contents: write
       pages: write
-      # needed for deployment
       id-token: write
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      # Debug: List files in the repository
+      - name: Debug - List files
+        run: ls -R
 
       # Prepare files for deployment
       - name: Prepare Files for Deployment
@@ -34,12 +37,16 @@ jobs:
           mkdir -p ${{ env.PREVIEW_PATH }}
           rsync -av --exclude='preview' ./ ${{ env.PREVIEW_PATH }}
 
+      # Debug: List files in the preview directory
+      - name: Debug - List preview files
+        run: ls -R ${{ env.PREVIEW_PATH }}
+
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./  # Deploy the root directory
+          publish_dir: ${{ env.PREVIEW_PATH }}  # Deploy the preview directory
           destination_dir: ${{ env.PREVIEW_PATH }}  # Unique preview path
           keep_files: true  # Keep existing files in the gh-pages branch
 
@@ -50,6 +57,8 @@ jobs:
           script: |
             const previewUrl = 'https://${{ env.BASE_URL }}/${{ env.PREVIEW_PATH }}/';
             
+            console.log('Preview URL:', previewUrl);  // Debug: Log the preview URL
+            
             const comment = `
               ⚡ Congrats! Your Preview deployment is ready!
       
@@ -59,9 +68,14 @@ jobs:
               This preview will be automatically updated as you make changes to your PR.
             `.trim();
             
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: comment
-            });
+            try {
+              await github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: comment
+              });
+              console.log('Comment posted successfully!');
+            } catch (error) {
+              console.error('Failed to post comment:', error);
+            }
