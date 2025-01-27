@@ -16,6 +16,11 @@ env:
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+      pages: write
+      id-token: write
 
     steps:
       - name: Checkout repository
@@ -24,7 +29,7 @@ jobs:
       - name: Create preview directory
         run: |
           mkdir -p ${{ env.PREVIEW_PATH }}
-          cp -r * ${{ env.PREVIEW_PATH }}/
+          rsync -av --exclude='preview' ./ ${{ env.PREVIEW_PATH }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
