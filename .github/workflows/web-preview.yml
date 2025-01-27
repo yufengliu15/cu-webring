@@ -1,5 +1,12 @@
 name: PR Preview Deployment
 
+env:
+  ACTOR: ${{ github.actor }}
+  BASE_URL: cu-webring.org
+  PREVIEW_PATH: preview/${{ github.actor }}/pr-${{ github.event.number }}
+
+run-name: ${{ github.actor }} is deploying a preview for PR ${{ github.event.number }}
+
 on:
   pull_request:
     types: [opened, synchronize, edited, reopened]
@@ -8,58 +15,53 @@ on:
       - '**/*.css'
       - '**/*.js'
 
-env:
-  ACTOR: ${{ github.actor }}
-  BASE_URL: cu-webring.org
-  PREVIEW_PATH: preview/${{ github.actor }}/pr-${{ github.event.number }}
-
 jobs:
   deploy-preview:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
     permissions:
       pull-requests: write
       contents: write
-      pages: write
-      id-token: write
+      deployments: write
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Create preview directory
-        run: |
-          mkdir -p ${{ env.PREVIEW_PATH }}
-          rsync -av --exclude='preview' ./ ${{ env.PREVIEW_PATH }}
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - uses: actions/checkout@v4
         with:
-          path: ${{ env.PREVIEW_PATH }}
+          fetch-depth: 0
 
-      - name: Deploy to Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          preview: true
-
-      - name: Generate preview URL
-        id: preview-url
+      # Create a new branch for the preview deployment
+      - name: Create preview branch
         run: |
-          echo "PREVIEW_URL=https://${{ env.BASE_URL }}/${{ env.PREVIEW_PATH }}" >> $GITHUB_ENV
+          git checkout -b pr-preview-${{ github.event.number }}
+          
+      # Build step if needed (in this case, just copying files)
+      - name: Prepare files
+        run: |
+          rm -rf preview-build
+          mkdir -p preview-build
+          rsync -av --progress ./ preview-build/ --exclude preview-build --exclude .git
+          
+      # Deploy to GitHub Pages
+      - name: Deploy preview
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./preview-build
+          destination_dir: ${{ env.PREVIEW_PATH }}
+          keep_files: true
 
-      - name: Comment on PR with preview link
+      # Comment on PR with preview link
+      - name: Comment PR
         uses: actions/github-script@v7
         with:
           script: |
-            const previewUrl = process.env.PREVIEW_URL;
+            const previewUrl = `https://${process.env.BASE_URL}/${process.env.PREVIEW_PATH}/index.html`;
+            
             const comment = `
               ⚡ Congrats! Your Preview deployment is ready!
-      
+              
               You can view the preview of the webring with your changes at:
               ${previewUrl}
-      
+              
               This preview will be automatically updated as you make changes to your PR.
             `.trim();
             
