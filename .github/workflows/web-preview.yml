@@ -1,15 +1,11 @@
 name: PR Preview Deployment
 
 env:
-  ACTOR: ${{ github.actor }}
-  BASE_URL: cu-webring.org
   PREVIEW_PATH: preview/${{ github.actor }}/pr-${{ github.event.number }}
-
-run-name: ${{ github.actor }} is deploying a preview for PR ${{ github.event.number }}
 
 on:
   pull_request:
-    types: [opened, synchronize, edited, reopened]
+    types: [opened, synchronize, reopened]
     paths:
       - '**/*.html'
       - '**/*.css'
@@ -19,59 +15,50 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     permissions:
-      pull-requests: write
       contents: write
-      deployments: write
+      pages: write
+      id-token: write
 
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      # Build step to prepare files
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
       - name: Prepare files
         run: |
-          rm -rf preview-build
-          mkdir -p preview-build
-          rsync -av --progress ./ preview-build/ --exclude preview-build --exclude .git
-          touch preview-build/.nojekyll  # Add .nojekyll to bypass Jekyll processing
+          rm -rf ./preview
+          mkdir -p ./${{ env.PREVIEW_PATH }}
+          rsync -av --exclude='.git' --exclude='preview' ./ ./${{ env.PREVIEW_PATH }}/
+          touch ./${{ env.PREVIEW_PATH}}/.nojekyll
 
-      # Deploy to GitHub Pages
-      - name: Deploy preview
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy to Pages
+        uses: actions/deploy-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./preview-build
-          destination_dir: ${{ env.PREVIEW_PATH }}
-          keep_files: true
+          target-path: ${{ env.PREVIEW_PATH }}
 
-      # Comment on PR with corrected preview links
       - name: Comment PR
         uses: actions/github-script@v7
         with:
           script: |
-            const customUrl = `https://${process.env.BASE_URL}/${process.env.PREVIEW_PATH}/`;
-            const pagesPreviewUrl = `https://${context.repo.owner}.github.io/${context.repo.repo}/${process.env.PREVIEW_PATH}/`;
+            const pagesUrl = `https://${context.repo.owner}.github.io/${context.repo.repo}/${{ env.PREVIEW_PATH }}/`;
+            const customUrl = `https://cu-webring.org/${{ env.PREVIEW_PATH }}/`;
             
             const comment = `
-              ⚡ Preview Deployment Ready!
+              🚀 Preview Deployed!
               
               **GitHub Pages URL:**  
-              [${pagesPreviewUrl}](${pagesPreviewUrl})
+              ${pagesUrl}
               
               **Custom Domain URL:**  
-              [${customUrl}](${customUrl})
+              ${customUrl}
               
-              Assets (CSS/JS) will load correctly in these links.
-            `.trim();
+              Allow 1-2 minutes for deployment propagation.
+            `;
             
-            try {
-              await github.rest.issues.createComment({
-                issue_number: context.issue.number,
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                body: comment
-              });
-            } catch (error) {
-              console.error('Failed to post comment:', error);
-            }
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
