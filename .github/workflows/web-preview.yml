@@ -50,20 +50,19 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const rawUrl = `https://raw.githubusercontent.com/${context.repo.owner}/${context.repo.repo}/gh-pages/${process.env.PREVIEW_PATH}/index.html`;
-            const previewUrl = `https://htmlpreview.github.io/?${encodeURIComponent(rawUrl)}`;
             const customUrl = `https://${process.env.BASE_URL}/${process.env.PREVIEW_PATH}/`;
+            const pagesPreviewUrl = `https://${context.repo.owner}.github.io/${context.repo.repo}/${process.env.PREVIEW_PATH}/`;
             
             const comment = `
-              ⚡ Congrats! Your Preview deployment is ready!
+              ⚡ Preview Deployment Ready!
               
-              **HTML Preview:**  
-              [View via html-preview.github.io](${previewUrl})
+              **GitHub Pages URL:**  
+              [${pagesPreviewUrl}](${pagesPreviewUrl})
               
               **Custom Domain URL:**  
               [${customUrl}](${customUrl})
               
-              This preview updates automatically with new commits.
+              Assets (CSS/JS) will load correctly in these links.
             `.trim();
             
             try {
