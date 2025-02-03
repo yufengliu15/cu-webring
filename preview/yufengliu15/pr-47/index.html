@@ -7,7 +7,7 @@
         <meta name="author" content="Yufeng">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta property="og:title" content="CU Webring">
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="css/style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
@@ -16,9 +16,9 @@
     <body onload="fillSiteTable('fromLoading')">
         <!-- Main Content -->
         <div id="content" class="hidden">
-            <img src="./assets/carleton_logo.svg" width="600">
+            <img src="assets/carleton_logo.svg" width="600">
             <div class="sticky" id="searchbardiv">
-                <img class="search-icon" src="./assets/search.svg">
+                <img class="search-icon" src="assets/search.svg">
                 <input id="searchbar" type="search" maxlength="100" spellcheck="false" placeholder="Search by name/site/year admitted" oninput="fillSiteTable(`fromSearch`)">
                 <button id="surpriseme" type="button" onclick="handleRandomSite()">
                     <strong>Surprise Me!</strong>
@@ -38,7 +38,7 @@
             </noscript>
         </div>
         <a href="https://github.com/yufengliu15/cu-webring/pulls" id="add-website" target="_blank">Add your website here ></a>
-        <script type="module" src="./js/cu-webring.js"></script>
-        <script src="./js/preloader.js"></script>
+        <script type="module" src="js/cu-webring.js"></script>
+        <script src="js/preloader.js"></script>
     </body>
 </html>
