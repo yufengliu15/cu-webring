@@ -8,12 +8,6 @@
 */
 const sites = [
   {
-    "name": "Olivia Ochoa",
-    "year": 2025,
-    "website": "https://oliviaochoa.dev",
-    "major": "Computer Science"
-  },
-  {
     "name": "Jamie Bennett",
     "year": 2022,
     "website": "https://jamiebennett.io",
