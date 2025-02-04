@@ -2,16 +2,14 @@
 {
   "name": "",
   "year": ,
-  "website": "",
-  "major": ""
+  "website": ""
 },
 */
 const sites = [
   {
     "name": "Yufeng Liu",
     "year": 2022,
-    "website": "https://yufengliu.tech",
-    "major": "Computer Science"
+    "website": "https://yufengliu.tech"
   },
   {
     "name": "Jamie Bennett",

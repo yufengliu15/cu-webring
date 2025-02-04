@@ -6,8 +6,6 @@ _To add your site, you MUST be a [Carleton University Student](https://carleton.
 
 **Full Website URL**: \<insert full URL here>
 
-**Major**: \<insert major here>
-
 _To confirm who you are:_
 
 **LinkedIn or something similar**: \<insert profile URL here>

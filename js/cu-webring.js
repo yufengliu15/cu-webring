@@ -3,7 +3,7 @@ import sites from './user_sites.js'
 const options = {
     includeScore: false,
     threshold: 0.3,
-    keys: ['name', 'year', 'major', 'website']
+    keys: ['name', 'year', 'website']
 }
 
 const fuse = new Fuse(sites, options)
