@@ -5,7 +5,7 @@ on:
     types: [opened, ready_for_review]
 
 jobs:
-  assign-reviewer:
+  add-reviews:
     runs-on: ubuntu-latest
     steps:
       - uses: kentaro-m/auto-assign-action@v1.2.5
