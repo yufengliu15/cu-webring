@@ -12,9 +12,9 @@ const sites = [
     "website": "https://yufengliu.tech"
   },
   {
-    "name": "Bob Joe",
+    "name": "Joe Bob",
     "year": 2023,
-    "website": "https://bobjoe.tech"
+    "website": "https://joebob.tech"
   },
   {
     "name": "Jamie Bennett",
