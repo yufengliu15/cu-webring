@@ -1,19 +1,12 @@
 name: "Auto Label"
-
 on:
   - pull_request_target
 
 jobs:
-  auto-label:
+  assign-label:
     permissions:
       contents: read
       pull-requests: write
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            .github
       - uses: actions/labeler@v5
-        with: 
-          configuration-path: .github/auto-label.yml
