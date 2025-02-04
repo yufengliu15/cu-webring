@@ -17,18 +17,6 @@ const sites = [
     "website": "https://joebob.tech"
   },
   {
-    "name": "Jamie Bennett",
-    "year": 2022,
-    "website": "https://jamiebennett.io",
-    "major": "Software Engineering"
-  },
-  {
-    "name": "Pena Howard",
-    "year": 2022,
-    "website": "https://penahoward.tech",
-    "major": "Computer Engineering"
-  },
-  {
     "name": "Aguirre Becker",
     "year": 2023,
     "website": "https://aguirrebecker.dev",
