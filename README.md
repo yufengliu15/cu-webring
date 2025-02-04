@@ -17,9 +17,7 @@ To add your site, you MUST be a current student or alumni at [Carleton Universit
     - Full Name
     - Year Admitted to Carleton
     - Website URL (must be **your** personal website)
-    - Major. 
 
-    Note: When adding your major, try to make it similar in format to other students, in order for the search to work optimally. Ex: don't put `CS` if others have put `Computer Science`
 3. Optional, but **please mention the webring** somewhere on your website. Preferably, have it link back to the main site ([cu-webring.org](https://cu-webring.org)).
 4. Create a [pull request](https://github.com/yufengliu15/cu-webring/pulls). 
 
