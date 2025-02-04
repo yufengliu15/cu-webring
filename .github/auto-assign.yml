@@ -1,8 +1,0 @@
-addReviewers: true
-addAssignees: author
-
-reviewers:
-  - yufengliu15
-  - rapha-pro
-
-numberOfReviewers: 2
