@@ -10,7 +10,7 @@ A [webring](https://en.wikipedia.org/wiki/Webring) is a group of websites linked
 The idea behind this webring is to bring exposure and traffic to your personal website, with the hopes of creating a more community-like experience during your time at Carleton. 
 
 ## How do I join?
-To add your site, you MUST be a current student or alumni at [Carleton University Student](https://carleton.ca/).
+To add your site, you MUST be a current student or alumni at [Carleton University](https://carleton.ca/).
 
 1. Fork the repo
 2. Add your details in `user_sites.js` to the end of `sites`. The 4 values are: 
