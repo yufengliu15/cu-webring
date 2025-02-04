@@ -1,0 +1,17 @@
+add-website: 
+  - changed-files:
+  - any-glob-to-any-file: 'js/user_sites.js'
+
+enhancement: 
+  - changed-files:
+  - any-glob-to-any-file: 
+    - 'js/cu-webring.js'
+    - 'css/style.css'
+    - 'index.html'
+    - '.github/*'
+    - 'assets/*'
+
+documentation:
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'README.md'

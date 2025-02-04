@@ -1,0 +1,7 @@
+addReviewers: true
+
+reviewers:
+  - yufengliu15
+  - rapha-pro
+
+numberOfReviewers: 2
