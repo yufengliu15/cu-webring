@@ -18,6 +18,12 @@ const sites = [
     "year": 2022,
     "website": "https://nathonana.com",
     "major": "Computer Science"
+  },
+  {
+    "name": "Ishar Ghura",
+    "year": 2022,
+    "website": "https://isharghura.com",
+    "major": "Computer Science"
   }
 ];
 
