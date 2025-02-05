@@ -358,7 +358,7 @@ ul {
 .visible {
     opacity: 1; 
     pointer-events: auto;
-    transition: opacity 0.5s ease;
+    transition: opacity 4s ease;
 }
 
 /* ----- special styles end ---------- */
