@@ -29,6 +29,12 @@ const sites = [
     "website": "https://juan-789.github.io/personal-website/",
     "alias": "Juan Marulanda",
   },
+  {
+    "name": "Daniel Byshkin",
+    "year": 2023,
+    "website": "https://typemeup.io",
+    "alias": "Typemeup",
+  },
 ];
 
 export default sites;
