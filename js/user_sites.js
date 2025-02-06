@@ -35,6 +35,11 @@ const sites = [
     "website": "https://linguini1.github.io",
     "alias": "linguini1.github.io",
   },
+  {
+    "name": "Neel Patel",
+    "year": 2021,
+    "website": "https://notneelpatel.xyz",
+  },
 ];
 
 export default sites;
