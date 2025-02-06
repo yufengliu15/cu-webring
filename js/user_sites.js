@@ -1,8 +1,10 @@
 /* Format:
+Leave alias blank if you do not wish to use it. 
 {
   "name": "",
   "year": ,
-  "website": ""
+  "website": "",
+  "alias": ""
 },
 */
 const sites = [

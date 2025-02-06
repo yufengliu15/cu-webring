@@ -13,10 +13,11 @@ The idea behind this webring is to bring exposure and traffic to your personal w
 To add your site, you MUST be a current student or alumni at [Carleton University](https://carleton.ca/).
 
 1. Fork the repo
-2. Add your details in `user_sites.js` to the end of the `sites` array. The 3 values are: 
+2. Add your details in `user_sites.js` to the end of the `sites` array. The 4 values are: 
     - Full Name
     - Year Admitted to Carleton
     - Website URL (must be **your** personal website)
+    - URL Alias (**Optional**, this is for if you don't like your url or wish to shorten it, ex: name.github.io -> name.io. Aliases **must** contain your name.) 
 
 3. Optional, but **please mention the webring** somewhere on your website. Preferably, have it link back to the main site ([cu-webring.org](https://cu-webring.org)).
 4. Create a [pull request](https://github.com/yufengliu15/cu-webring/pulls) and fill in the details. 
