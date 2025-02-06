@@ -29,6 +29,12 @@ const sites = [
     "website": "https://juan-789.github.io/personal-website/",
     "alias": "Juan Marulanda",
   },
+  {
+    "name": "Matteo Golin",
+    "year": 2021,
+    "website": "https://linguini1.github.io",
+    "alias": "linguini1.github.io",
+  },
 ];
 
 export default sites;
