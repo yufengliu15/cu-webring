@@ -12,3 +12,5 @@ _To confirm who you are:_
 **LinkedIn or something similar**: \<insert profile URL here>
 
 _Remember that the above is just to double check, you must still add your information to the end of the `sites` array in `user_sites.js`!_
+
+**Optional - Feedback or suggestions**: \<insert feedback here>
