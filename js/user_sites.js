@@ -20,7 +20,12 @@ const sites = [
     "name": "Ishar Ghura",
     "year": 2022,
     "website": "https://isharghura.com"
-  }
+  },
+  {
+    "name": "Juan Marulanda",
+    "year": 2023,
+    "website": "https://juan-789.github.io/personal-website/"
+  },
 ];
 
 export default sites;
