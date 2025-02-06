@@ -1,7 +1,7 @@
 # cu-webring
 A webring for Carleton Students by Carleton Students.
 
-Heavily inspired by https://github.com/simcard0000/se-webring and https://github.com/leofalvo/mcgillcswebring.org. 
+Heavily inspired by [Waterloo's SE Webring](https://github.com/simcard0000/se-webring) and [McGill's Webring](https://github.com/leofalvo/mcgillcswebring.org). 
 
 [What's a webring?](#whats-a-webring) / [How do I join?](#how-do-i-join) / [How long will the webring be maintained for?](#how-long-will-the-webring-be-maintained-for)
 ## What's a webring?
