@@ -15,6 +15,11 @@ const sites = [
     "name": "Raphaël Onana",
     "year": 2022,
     "website": "https://nathonana.com"
+  },
+  {
+    "name": "Ishar Ghura",
+    "year": 2022,
+    "website": "https://isharghura.com"
   }
 ];
 
