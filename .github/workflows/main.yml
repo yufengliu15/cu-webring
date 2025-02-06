@@ -1,0 +1,49 @@
+name: Update Webring
+
+on:
+  pull_request:
+    types: [opened, edited]
+
+jobs:
+  update-webring:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Extract PR information
+        id: extract-info
+        run: |
+          # Extract PR description or comment
+          PR_BODY="${{ github.event.pull_request.body }}"
+          echo "$PR_BODY" > pr_body.txt
+
+          # Parse the information (example using grep)
+          FULL_NAME=$(grep -oP 'Full Name:\s*\K.*' pr_body.txt)
+          WEBSITE=$(grep -oP 'Website:\s*\K.*' pr_body.txt)
+          YEAR_ADMITTED=$(grep -oP 'Year Admitted:\s*\K.*' pr_body.txt)
+          LINKEDIN=$(grep -oP 'LinkedIn:\s*\K.*' pr_body.txt)
+
+          # Output the extracted values
+          echo "::set-output name=full_name::$FULL_NAME"
+          echo "::set-output name=website::$WEBSITE"
+          echo "::set-output name=year_admitted::$YEAR_ADMITTED"
+          echo "::set-output name=linkedin::$LINKEDIN"
+
+      - name: Update JavaScript file
+        run: |
+          # Append new user data to the JS file
+          echo "{
+            fullName: '${{ steps.extract-info.outputs.full_name }}',
+            website: '${{ steps.extract-info.outputs.website }}',
+            yearAdmitted: '${{ steps.extract-info.outputs.year_admitted }}'
+            linkedin: '${{ steps.extract-info.outputs.linkedin }}',
+          }," >> users.js
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add users.js
+          git commit -m "Add new user: ${{ steps.extract-info.outputs.full_name }}"
+          git push
