@@ -56,7 +56,11 @@ function fillSiteTable(type){
         if (host.substring(0, 4) === "www.") {
             host = host.substring(4, host.length);
         }
-        htmlContent.push("<li><a target=\"_blank\" href=\"" + cleanSite.toString() + "\">" + host + "</a></li>");
+
+        console.log("siteArray[i]: " + JSON.stringify(siteArray[i]))
+        let title = siteArray[i]["name"] + " | " + siteArray[i]["year"];
+
+        htmlContent.push("<li><a title=\"" + title + "\" target=\"_blank\" href=\"" + cleanSite.toString() + "\">" + host + "</a></li>");
     }
 
     htmlContent.push("</ul>");
