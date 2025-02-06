@@ -19,9 +19,9 @@ To add your site, you MUST be a current student or alumni at [Carleton Universit
     - Website URL (must be **your** personal website)
 
 3. Optional, but **please mention the webring** somewhere on your website. Preferably, have it link back to the main site ([cu-webring.org](https://cu-webring.org)).
-4. Create a [pull request](https://github.com/yufengliu15/cu-webring/pulls). 
+4. Create a [pull request](https://github.com/yufengliu15/cu-webring/pulls) and fill in the details. 
 
 ## How long will the webring be maintained for?
-As long as the url is working ([cu-webring.org](https://cu-webring.org)), I (@yufengliu15 & @rapha-pro) will maintain the webring. So do not hesitate to open a pull request!
+As long as the url is working ([cu-webring.org](https://cu-webring.org)), we (@yufengliu15 & @rapha-pro) will maintain the webring. So do not hesitate to open a pull request!
 
 Authors: Yufeng Liu (@yufengliu15) and Raphaël Onana (@rapha-pro)
