@@ -1,3 +1,4 @@
+### Important! Fill out the details below before you create a pull request! 
 _To add your site, you MUST be a [Carleton University Student](https://carleton.ca/) (alumni welcome too!) to join._
 
 **Full Name**: \<insert full name here>
