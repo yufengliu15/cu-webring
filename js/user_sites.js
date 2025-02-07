@@ -54,6 +54,12 @@ const sites = [
     "name": "Riyan Ahmed",
     "year": 2022,
     "website": "https://riyanahmed.com",
+  },
+
+  {
+    "name": "Ansh Kakkar",
+    "year": 2023,
+    "website": "https://www.anshkakkar.dev/",
   }
 ];
 
