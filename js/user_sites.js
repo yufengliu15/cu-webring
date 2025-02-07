@@ -44,6 +44,11 @@ const sites = [
     "name": "Matthew MacRae-Bovell",
     "year": 2018,
     "website": "https://matthewmacraebovell.com",
+  },
+  {
+    "name": "Rebecca Kempe",
+    "year": 2022,
+    "website": "https://blog.rkempe.ca/",
   }
 ];
 
