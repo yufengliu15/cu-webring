@@ -13,7 +13,7 @@ The idea behind this webring is to bring exposure and traffic to your personal w
 To add your site, you MUST be a current student or alumni at [Carleton University](https://carleton.ca/).
 
 1. Fork the repo
-2. Add your details in `user_sites.js` to the end of the `sites` array. The 4 values are: 
+2. Add your details in `js/user_sites.js` to the end of the `sites` array. The 4 values are: 
     - Full Name
     - Year Admitted to Carleton
     - Website URL (must be **your** personal website)
