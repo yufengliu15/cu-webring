@@ -40,6 +40,11 @@ const sites = [
     "year": 2021,
     "website": "https://notneelpatel.xyz",
   },
+  {
+    "name": "Matthew MacRae-Bovell",
+    "year": 2018,
+    "website": "https://matthewmacraebovell.com",
+  }
 ];
 
 export default sites;
