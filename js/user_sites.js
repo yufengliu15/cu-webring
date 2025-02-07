@@ -49,6 +49,11 @@ const sites = [
     "name": "Rebecca Kempe",
     "year": 2022,
     "website": "https://blog.rkempe.ca/",
+  },
+  {
+    "name": "Riyan Ahmed",
+    "year": 2022,
+    "website": "https://riyanahmed.com",
   }
 ];
 
