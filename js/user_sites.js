@@ -69,13 +69,12 @@ const sites = [
     "year": 2022,
     "website": "https://saimhashmi.tech",
 
-  }
-
+  },
   {
     "name": "Jeremy Friesen",
     "year": 2022,
     "website": "https://jeremy-friesen.dev",
-  }
+  },
 ];
 
 export default sites;
