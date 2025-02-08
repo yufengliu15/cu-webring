@@ -4,7 +4,7 @@ Leave alias blank if you do not wish to use it.
   "name": "",
   "year": ,
   "website": "",
-  "alias": ""
+  "alias": "",
 },
 */
 const sites = [
