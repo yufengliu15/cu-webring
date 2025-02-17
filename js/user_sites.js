@@ -73,7 +73,7 @@ const sites = [
   {
     "name": "Jeremy Friesen",
     "year": 2022,
-    "website": "https://jeremy-friesen.dev",
+    "website": "https://jeremy-friesen.com",
   },
 ];
 
