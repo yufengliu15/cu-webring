@@ -75,6 +75,11 @@ const sites = [
     year: 2019,
     website: "https://robertbabaev.tech",
   },
+  {
+    name: "Daniel Byshkin",
+    year: 2023,
+    website: "https://bskdany.com",
+  },
 ];
 
 export default sites;
