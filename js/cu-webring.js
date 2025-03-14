@@ -57,7 +57,6 @@ function fillSiteTable(type){
             host = host.substring(4, host.length);
         }
 
-        console.log("siteArray[i]: " + JSON.stringify(siteArray[i]))
         let title = siteArray[i]["name"] + " | " + siteArray[i]["year"];
         let alias = siteArray[i]["alias"];
 
