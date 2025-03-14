@@ -11,6 +11,8 @@ body {
   min-height: 100vh;
   margin: 0;
   padding: 0;
+
+  overflow-x: hidden;
 }
 
 html {
@@ -126,6 +128,10 @@ ul {
         transform: translateX(-50%);
         top: calc(100% + 15px);
         margin-bottom: 100%;
+        width: 13rem;
+        max-width: 80%; 
+        min-width: auto; 
+        box-sizing: border-box; 
     }
     
     #searchbardiv {
@@ -187,6 +193,7 @@ ul {
     justify-content: center;
     align-items: center;
     width: 13rem;
+    max-width: 13rem;
     overflow: hidden;
     height: 3rem;
     background-size: 300% 300%;
@@ -207,7 +214,7 @@ ul {
     background-origin: border-box;
     background-clip: content-box, border-box;
     font-family: 'Source Code Pro';
-    font-size: 20rem;
+    font-size: 1rem;
     transition: transform 0.3s ease-in-out;
   } 
   
