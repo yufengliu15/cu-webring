@@ -110,7 +110,7 @@ ul {
 
 #searchbar {
     background-color: rgba(0, 0, 0, 0);
-    color: white;
+    color: var(--primary-text);
     padding: 3px;
     border: none;
     outline: none;
@@ -120,7 +120,24 @@ ul {
     width: 100%;
 }
 
-/* Move surprise me button down */
+/* Standard syntax for most modern browsers */
+#searchbar::placeholder {
+  color: #dadada !important; 
+  opacity: 0.7;
+}
+
+/* Firefox */
+#searchbar::-moz-placeholder {
+  color: #dadada !important;
+  opacity: 0.7;
+}
+
+/* Internet Explorer and Edge (old versions) */
+#searchbar::-ms-input-placeholder {
+  color: #dadada !important;
+  opacity: 0.7;
+}
+
 @media screen and (max-width: 805px) {
     #surpriseme {
         position: absolute;
