@@ -109,8 +109,8 @@ ul {
 }
 
 #searchbar {
-    background-color: rgb(0,0,0,0);
-    color: var(--primary-text);
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
     padding: 3px;
     border: none;
     outline: none;
@@ -194,8 +194,6 @@ ul {
     margin-bottom: 20px;
     width: 70%;
 }
-
-
 
 /* ----- special styles ---------- */
 
