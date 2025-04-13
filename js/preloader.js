@@ -1,14 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const content = document.getElementById("content");
-        
-    if (content) {
-    content.classList.remove("hidden");
-    content.classList.add("visible");
+    setTimeout(() => {
+      const loader = document.getElementById('loading-screen');
+      const content = document.getElementById('content');
 
-    document.body.style.overflow = "auto";
-    } else {
-    console.error("Content element not found!");
-    }
-});
-  
-  
+      loader.style.opacity = '0';
+      loader.style.transition = 'opacity 0.5s ease';
+
+      setTimeout(() => {
+        loader.style.visibility = 'hidden';
+        content.classList.remove('hidden');
+        content.classList.add('visible');
+      }, 500);
+    }, 800);
+
+  });
