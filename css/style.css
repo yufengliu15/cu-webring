@@ -124,6 +124,7 @@ header {
   margin-bottom: 0.5rem;
   position: relative;
   display: inline-block;
+  
 }
 
 #logo::after {
@@ -326,7 +327,6 @@ a#add-website::after {
   cursor: pointer;
   backdrop-filter: blur(1rem);
   border-radius: 5rem;
-  transition: 0.5s;
   animation: gradient_301 5s ease infinite;
   border: double 4px transparent;
   background-image: linear-gradient(#212121, #212121),
@@ -341,7 +341,7 @@ a#add-website::after {
   background-clip: content-box, border-box;
   font-family: 'Source Code Pro', monospace;
   font-size: 1rem;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 #surpriseme #container-stars {
@@ -579,8 +579,8 @@ a#add-website::after {
 @media screen and (max-width: 805px) {
   #surpriseme {
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+      left: 20%;
+      /* transform: translate(-60%, -50%); */
       top: calc(100% + 15px);
       margin-bottom: 100%;
       width: 13rem;
@@ -598,10 +598,6 @@ a#add-website::after {
       width: calc(100%);  
   }
 
-  .site-card {
-      min-width: 250px;
-      flex: 1 1 100%;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -625,6 +621,10 @@ a#add-website::after {
 
   #logo {
       font-size: 2rem;
+  }
+
+  header .btn-shine {
+      font-size: 1rem;
   }
 
   #logo-svg {
