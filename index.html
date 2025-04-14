@@ -1,47 +1,81 @@
 <!DOCTYPE html>
 
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>CU Webring</title>
-        <meta name="author" content="Yufeng">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta property="og:title" content="CU Webring">
-        <meta property="og:description" content="A webring for Computer Science and Software Engineering students at Carleton University">
-        <meta name="description" content="A webring for Computer Science and Software Engineering students at Carleton University">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.5.3"></script>
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="691bfa5c-4acf-44ab-9f29-4936493c7a5d"></script>
-    </head>
-    <body onload="fillSiteTable('fromLoading')">
-        <!-- Main Content -->
-        <div id="content" class="hidden">
-            <p id="tagline">Connecting Carleton University's Tech Students</p>
-            <div class="sticky" id="searchbardiv">
-                <img class="search-icon" alt="Search" src="assets/search.svg">
-                <input id="searchbar" type="search" maxlength="100" spellcheck="false" placeholder="Search by name/site/year admitted" oninput="fillSiteTable(`fromSearch`)">
-                <button title="Randomly select someone's website" id="surpriseme" type="button" onclick="handleRandomSite()">
-                    <strong>Surprise Me!</strong>
-                    <div id="container-stars">
-                      <div id="stars"></div>
-                    </div>
-                  
-                    <div id="glow">
-                      <div class="circle"></div>
-                      <div class="circle"></div>
-                    </div>
-                </button>
-                  
-            </div>
-            <noscript>
-                <p>This website requires JavaScript to run. Please enable running scripts for this website in your browser.</p>
-            </noscript>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CU Webring</title>
+    <meta name="author" content="Yufeng">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="CU Webring">
+    <meta property="og:description"
+        content="A webring for Computer Science and Software Engineering students at Carleton University">
+    <meta name="description"
+        content="A webring for Computer Science and Software Engineering students at Carleton University">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Google Fonts and css stylesheet-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Code+Pro:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.5.3"></script>
+    <script defer src="https://cloud.umami.is/script.js"
+        data-website-id="691bfa5c-4acf-44ab-9f29-4936493c7a5d"></script>
+</head>
+
+<body onload="fillSiteTable('fromLoading')">
+    <!-- Background animation -->
+    <div class="bg-animation">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Loading screen -->
+    <div class="loading-container" id="loading-screen">
+        <div class="loading">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
         </div>
-        <a title="Link to Github repo" href="https://github.com/yufengliu15/cu-webring?tab=readme-ov-file#how-do-i-join" id="add-website" target="_blank">Add your website here ></a>
-        <script type="module" src="js/cu-webring.js"></script>
-        <script src="js/preloader.js"></script>
-    </body>
+    </div>
+
+    <!-- Header section -->
+    <header>
+        <h1 id="logo">Carleton Webring</h1>
+        <p id="taglin" class="btn-shine">Connecting Carleton University's Tech Students</p>
+    </header>
+
+    <!-- Main Content -->
+    <div id="content" class="hidden">
+        <div class="sticky" id="searchbardiv">
+            <img class="search-icon" alt="Search" src="assets/search.svg">
+            <input id="searchbar" type="search" maxlength="100" spellcheck="false"
+                placeholder="Search by name/site/year admitted" oninput="fillSiteTable('fromSearch')">
+            <button title="Randomly select someone's website" id="surpriseme" type="button"
+                onclick="handleRandomSite()">
+                <strong>Surprise Me!</strong>
+                <div id="container-stars">
+                    <div id="stars"></div>
+                </div>
+                <div id="glow">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+            </button>
+        </div>
+    </div>
+    <noscript>
+        <p>This website requires JavaScript to run. Please enable running scripts for this website in your browser.</p>
+    </noscript>
+    </div>
+    <a title="Link to Github repo" href="https://github.com/yufengliu15/cu-webring?tab=readme-ov-file#how-do-i-join"
+        id="add-website" target="_blank">Add your website here ></a>
+    <script type="module" src="js/cu-webring.js"></script>
+    <script src="js/preloader.js"></script>
+</body>
+
 </html>
