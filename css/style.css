@@ -1,12 +1,12 @@
 :root {
-    --primary-text: #dadada;
-    --secondary-color: #e91b25;
+  --primary-text: #dadada;
+  --secondary-color: #e91b25;
 }
 
 body {
-  font-family: 'Source Code Pro';
+  font-family: "Source Code Pro";
   font-size: large;
-  
+
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -19,62 +19,60 @@ html {
 }
 
 .sticky {
-    position: sticky;
-    position: -webkit-sticky;
+  position: sticky;
+  position: -webkit-sticky;
 }
 
-a{
-    text-decoration: none;
-    color: var(--primary-text);
-    transition: color 0.3s ease-in-out;
+a {
+  text-decoration: none;
+  color: var(--primary-text);
+  transition: color 0.3s ease-in-out;
 }
 
-a:hover{
-    color: var(--secondary-color);
+a:hover {
+  color: var(--secondary-color);
 }
 
 a#add-website {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 6px 12px;
-    background-color: black;
-    color: var(--primary-text);
-    /* border: 1px solid var(--primary-text); */
-    border-radius: 40px;
-    font-family: 'Source Code Pro';
-    cursor: pointer  ;
-    transition: background-color 0.2s ease-in-out ;
-    z-index: 10  ;
-    text-decoration: none;
-    display: inline-block;
-    white-space: nowrap;
-    opacity: 0.5;
-    
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  background-color: black;
+  color: var(--primary-text);
+  border-radius: 40px;
+  font-family: "Source Code Pro";
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  z-index: 10;
+  text-decoration: none;
+  display: inline-block;
+  white-space: nowrap;
+  opacity: 0.5;
 }
 
 a#add-website:hover {
-    background-color: var(--secondary-color);
-    color: rgb(246, 246, 246);
-    transition: background-color 0.3s ease;
-    opacity: 0.8;
+  background-color: var(--secondary-color);
+  color: rgb(246, 246, 246);
+  transition: background-color 0.3s ease;
+  opacity: 0.8;
 }
 
 ul {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    padding: 0 20px;
-    max-width: 100%;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 20px;
+  max-width: 100%;
 }
 
 .search-icon {
-    padding-bottom: 1%;
-    width: 0.5px;
-    height: 1px;
-    opacity: 0.5;
+  padding-bottom: 1%;
+  width: 0.5px;
+  height: 1px;
+  opacity: 0.5;
 }
 
 #searchbardiv {
@@ -84,7 +82,7 @@ ul {
   width: 65%;
   display: flex;
   align-items: center;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   gap: 10px;
   border-bottom: none;
   position: relative;
@@ -94,35 +92,35 @@ ul {
 }
 
 #searchbardiv::after {
-    content: '';
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    width: calc(100% - 200px);
-    height: 1px;
-    background-color: white;
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: calc(100% - 200px);
+  height: 1px;
+  background-color: white;
 }
 
 #searchbardiv img {
-    padding-top: 5px;
-    margin-left: -20px; 
+  padding-top: 5px;
+  margin-left: -20px;
 }
 
 #searchbar {
-    background-color: rgba(0, 0, 0, 0);
-    color: var(--primary-text);
-    padding: 3px;
-    border: none;
-    outline: none;
-    font-family: 'Source Code Pro';
-    flex: 1;
-    font-size: large;
-    width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--primary-text);
+  padding: 3px;
+  border: none;
+  outline: none;
+  font-family: "Source Code Pro";
+  flex: 1;
+  font-size: large;
+  width: 100%;
 }
 
 /* Standard syntax for most modern browsers */
 #searchbar::placeholder {
-  color: #dadada !important; 
+  color: #dadada !important;
   opacity: 0.7;
 }
 
@@ -139,25 +137,25 @@ ul {
 }
 
 @media screen and (max-width: 805px) {
-    #surpriseme {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        top: calc(100% + 15px);
-        margin-bottom: 100%;
-        width: 13rem;
-        max-width: 80%; 
-        min-width: auto; 
-        box-sizing: border-box; 
-    }
-    
-    #searchbardiv {
-        margin-bottom: 60px;
-    }
+  #surpriseme {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(100% + 15px);
+    margin-bottom: 100%;
+    width: 13rem;
+    max-width: 80%;
+    min-width: auto;
+    box-sizing: border-box;
+  }
 
-    #searchbardiv::after {
-        width: calc(100%);  
-    }
+  #searchbardiv {
+    margin-bottom: 60px;
+  }
+
+  #searchbardiv::after {
+    width: calc(100%);
+  }
 }
 
 #tagline {
@@ -180,35 +178,35 @@ ul {
 }
 
 #content img {
-    max-width: 90%;
-    height: auto;
-    width: auto;
-    max-width: 600px;
+  max-width: 90%;
+  height: auto;
+  width: auto;
+  max-width: 600px;
 }
 
 #mainTable {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-flow: row wrap;
-    gap: 60px;
-    top: 0px;
-    margin-bottom: 20px;
-    width: 70%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: row wrap;
+  gap: 60px;
+  top: 0px;
+  margin-bottom: 20px;
+  width: 70%;
 }
 
 #surpriseme {
-    background-color: transparent;
-    color: var(--primary-text);
-    padding: 12px 24px;
-    border: 1px solid var(--primary-text);
-    border-radius: 40px;
-    font-family: 'Source Code Pro';
-    cursor: pointer;
-    transition: all 0.3s ease;
-    opacity: 0.7;
-    font-size: 0.9em;
+  background-color: transparent;
+  color: var(--primary-text);
+  padding: 12px 24px;
+  border: 1px solid var(--primary-text);
+  border-radius: 40px;
+  font-family: "Source Code Pro";
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  font-size: 0.9em;
 }
 
 #surpriseme:hover {
@@ -223,7 +221,6 @@ ul {
   z-index: 1;
 }
 
-
 #ascii-art {
   color: var(--primary-text);
   text-align: center;
@@ -237,15 +234,13 @@ ul {
 
 @media screen and (max-width: 555px) {
   #ascii-art {
-    font-size:0.4rem;
-
+    font-size: 0.4rem;
   }
 }
 
 @media screen and (max-width: 310px) {
   #ascii-art {
-    font-size:0.2rem;
-
+    font-size: 0.2rem;
   }
 }
 
@@ -258,17 +253,13 @@ ul {
   user-select: none;
 }
 
-/* ----- special styles ---------- */
-
 /* Preloader */
 .hidden {
-    opacity: 0; 
-}
-  
-.visible {
-    opacity: 1; 
-    pointer-events: auto;
-    transition: opacity 4s ease;
+  opacity: 0;
 }
 
-/* ----- special styles end ---------- */
+.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 4s ease;
+}
