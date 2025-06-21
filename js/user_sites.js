@@ -80,6 +80,11 @@ const sites = [
     year: 2023,
     website: "https://bskdany.com",
   },
+  {
+    name: "Jacob Tadeson",
+    year: 2023,
+    website: "https://jtdsn.dev"
+  }
 ];
 
 export default sites;
