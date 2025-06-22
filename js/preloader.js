@@ -2,12 +2,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const content = document.getElementById("content");
         
     if (content) {
-    content.classList.remove("hidden");
-    content.classList.add("visible");
+        content.classList.remove("hidden");
+        content.classList.add("visible");
 
-    document.body.style.overflow = "auto";
+        document.body.style.overflow = "auto";
     } else {
-    console.error("Content element not found!");
+        console.error("Content element not found!");
     }
 });
   

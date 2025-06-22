@@ -17,6 +17,7 @@ const sites = [
     name: "Raphaël Onana",
     year: 2022,
     website: "https://nathonana.com",
+    alias: "Raphaël Onana",
   },
   {
     name: "Ishar Ghura",
@@ -84,7 +85,7 @@ const sites = [
     name: "Jacob Tadeson",
     year: 2023,
     website: "https://jtdsn.dev"
-  }
+  },
 ];
 
 export default sites;
