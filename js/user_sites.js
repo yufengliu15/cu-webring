@@ -86,6 +86,12 @@ const sites = [
     year: 2023,
     website: "https://jtdsn.dev"
   },
+  {
+    name: "Rodney Shen",
+    year: 2023,
+    website: "https://www.rodney.lol/"
+  }
 ];
 
 export default sites;
+
