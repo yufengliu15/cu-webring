@@ -1,5 +1,7 @@
 ### Important! Fill out the details below before you create a pull request! 
-_To add your site, you MUST be a [Carleton University Student](https://carleton.ca/) (alumni welcome too!) to join. Please make sure to add a reference to the webring somewhere on your website! Be creative!_
+_To add your site, you MUST be a [Carleton University Student](https://carleton.ca/) (alumni welcome too!) to join._ 
+
+_The webring grows when you add a reference back to it on your website! More people accessing the webring means more people visiting your website, it's a win-win situation!_
 
 **Full Name**: \<insert full name here>
 
