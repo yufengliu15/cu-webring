@@ -90,6 +90,11 @@ const sites = [
     name: "Rodney Shen",
     year: 2023,
     website: "https://www.rodney.lol/"
+  }, 
+  {
+    name: "Allison Cretel", 
+    year: 2023, 
+    website: "https://allcre.github.io/portfolio/"
   }
 ];
 
