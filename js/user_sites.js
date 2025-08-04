@@ -95,6 +95,12 @@ const sites = [
     name: "Allison Cretel", 
     year: 2023, 
     website: "https://allcre.github.io/portfolio/"
+  },
+  {
+    name: "Lili Wang", 
+    year: 2025, 
+    website: "https://liliwang.dev",
+    alias: "Lili Wang"
   }
 ];
 
