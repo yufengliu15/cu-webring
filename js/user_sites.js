@@ -101,6 +101,11 @@ const sites = [
     year: 2025, 
     website: "https://liliwang.dev",
     alias: "Lili Wang"
+  },
+  {
+    name: "Jester Zhou",
+    year: 2023,
+    website: "https://jester.ooo/"
   }
 ];
 
