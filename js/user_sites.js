@@ -106,6 +106,11 @@ const sites = [
     name: "Jester Zhou",
     year: 2023,
     website: "https://jester.ooo/"
+  },
+  {
+    name:"Simon Amable",
+    year:"2023",
+    website:"https://www.simonamable.com/"
   }
 ];
 
