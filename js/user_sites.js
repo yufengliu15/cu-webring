@@ -64,7 +64,7 @@ const sites = [
   {
     name: "Saim Hashmi",
     year: 2022,
-    website: "https://saimhashmi.tech",
+    website: "http://saimhashmi.xyz",
   },
   {
     name: "Jeremy Friesen",
