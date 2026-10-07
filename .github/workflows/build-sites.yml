@@ -1,0 +1,48 @@
+name: "Build Sites"
+
+# Rebuilds js/generated_sites.js whenever a site file lands on main or dev.
+# Pushes made with GITHUB_TOKEN don't trigger workflows, so the bot commit won't loop.
+on:
+  push:
+    branches:
+      - main
+      - dev
+    paths:
+      - 'sites/**'
+      - 'scripts/build-sites.mjs'
+  workflow_dispatch:
+
+# Merging several PRs back to back queues the runs instead of racing pushes
+concurrency:
+  group: build-sites-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Latest branch head (not the triggering commit), with full history for ordering
+          ref: ${{ github.ref }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: node scripts/build-sites.mjs
+
+      - name: Commit generated file
+        run: |
+          if git diff --quiet -- js/generated_sites.js; then
+            echo "No changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add js/generated_sites.js
+          git commit -m "chore: rebuild generated_sites.js"
+          git push

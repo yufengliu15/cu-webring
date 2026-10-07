@@ -1,12 +1,6 @@
-/* Format:
-Leave alias blank if you do not wish to use it. 
-{
-  "name": "",
-  "year": ,
-  "website": "",
-  "alias": "",
-},
-*/
+/* FROZEN: do not add new sites here.
+New sites go in their own file in the sites/ folder (see README).
+This list keeps the original order; sites from sites/ are shown after it. */
 const sites = [
   {
     name: "Yufeng Liu",

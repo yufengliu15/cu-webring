@@ -1,6 +1,8 @@
 add-website: 
   - changed-files:
-    - any-glob-to-any-file: 'js/user_sites.js'
+    - any-glob-to-any-file:
+      - 'sites/*'
+      - 'js/user_sites.js'
 
 enhancement: 
   - changed-files:
