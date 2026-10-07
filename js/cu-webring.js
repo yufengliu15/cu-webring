@@ -1,4 +1,7 @@
-import sites from './user_sites.js'
+import legacySites from './user_sites.js'
+import generatedSites from './generated_sites.js'
+
+const sites = [...legacySites, ...generatedSites]
 
 const options = {
     includeScore: false,
