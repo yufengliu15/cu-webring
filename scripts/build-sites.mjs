@@ -12,11 +12,18 @@ const OUTPUT = "js/generated_sites.js";
 // Map each sites/ file to the timestamp of the first-parent commit that added it.
 // --first-parent makes a merged PR count at merge time rather than at its own commit times.
 function addedTimes() {
-  const log = execFileSync(
-    "git",
-    ["log", "--first-parent", "--diff-filter=A", "--no-renames", "--name-only", "--format=@%ct", "--", `${SITES_DIR}/`],
-    { encoding: "utf8" }
-  );
+  let log;
+  try {
+    log = execFileSync(
+      "git",
+      ["log", "--first-parent", "--diff-filter=A", "--no-renames", "--name-only", "--format=@%ct", "--", `${SITES_DIR}/`],
+      { encoding: "utf8" }
+    );
+  } catch {
+    // No git history available (e.g. some preview builds): fall back to filename order
+    console.warn("git log failed, ordering by filename");
+    return {};
+  }
   const times = {};
   let current = 0;
   for (const line of log.split("\n")) {

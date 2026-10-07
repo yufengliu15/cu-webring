@@ -1,0 +1,5 @@
+# Deploy previews for PRs. cu-webring.org itself is served by GitHub Pages.
+# Building here makes a PR's new sites/*.json show up in its preview.
+[build]
+  command = "node scripts/build-sites.mjs"
+  publish = "."
