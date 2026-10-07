@@ -27,9 +27,7 @@ To add your site, you MUST be a current student or alumni at [Carleton Universit
     - `website`: Website URL (must be **your** personal website)
     - `alias`: **Optional**, delete the line if you don't need it. This is for if you don't like your url or wish to shorten it, ex: name.github.io -> name.io. Aliases **must** contain your name.
 
-    Since everyone adds their own file, PRs never conflict with each other. Once your PR is merged, a GitHub Action adds your site to the webring automatically.
-
-3. Optional, but **please mention the webring** somewhere on your website. Preferably, have it link back to the main site ([cu-webring.org](https://cu-webring.org)).
+3. **Please mention the webring** somewhere on your website. Preferably, have it link back to the main site ([cu-webring.org](https://cu-webring.org)).
 4. Create a [pull request](https://github.com/yufengliu15/cu-webring/pulls) and fill in the details. 
 
 ## How long will the webring be maintained for?
