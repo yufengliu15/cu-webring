@@ -1,0 +1,45 @@
+name: "Deploy Pages"
+
+# Builds js/generated_sites.js from sites/ and deploys the site to GitHub Pages.
+# The generated file is not committed, so nothing pushes to the protected main branch.
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+# Merging several PRs back to back queues the deploys instead of racing them
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Full history so build-sites.mjs can order entries by merge time
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: node scripts/build-sites.mjs
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
